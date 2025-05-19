@@ -407,16 +407,16 @@ void loop() {
 
 void clutchMotor(){ //function to control the clutch. Includes the code required to calibrate the clutch
 
-/*
-Output code summary for the clutch:
-outgoing.clutchpos=0 -> clutch is closed
-outgoing.clutchpos=1 -> clutch is open
-outgoing.clutchpos=2 -> clutch is moving (regular operation and during calibration)
-outgoing.clutchpos=3 -> clutch is not calibrated
-outgoing.clutchpos=4 -> storing current position as "clutch open" confirmed (during calibration)
-outgoing.clutchpos=5 -> storing current position as "clutch closed" confirmed (during calibration)
-outgoing.clutchpos>5 -> analog sensor value of clutch a actuator (6 - 261))
-*/
+  /*
+  Output code summary for the clutch:
+  outgoing.clutchpos=0 -> clutch is closed
+  outgoing.clutchpos=1 -> clutch is open
+  outgoing.clutchpos=2 -> clutch is moving (regular operation and during calibration)
+  outgoing.clutchpos=3 -> clutch is not calibrated
+  outgoing.clutchpos=4 -> storing current position as "clutch open" confirmed (during calibration)
+  outgoing.clutchpos=5 -> storing current position as "clutch closed" confirmed (during calibration)
+  outgoing.clutchpos>5 -> analog sensor value of clutch a actuator (6 - 261))
+  */
 
   if (incoming.clutch==3){ //input 3 -> move clutch a in dir 1 for 150 ms, then report the execution to the RC
     mcp.digitalWrite(clutchadir, HIGH);
@@ -621,16 +621,16 @@ outgoing.clutchpos>5 -> analog sensor value of clutch a actuator (6 - 261))
 
 void shifterMotor(){ //the code for the shifter works equally as the code for the clutch. It only omits code for a 2nd actuator (the shifter uses only one actuator)
 
-/*
-Output code summary for the gear shifter:
-outgoing.shifterpos=0 -> slow gear is engaged
-outgoing.shifterpos=1 -> fast gear is engaged
-outgoing.shifterpos=2 -> gear shifter is moving (regular operation and during calibration)
-outgoing.shifterpos=3 -> gear shifter is not calibrated
-outgoing.shifterpos=4 -> storing current position as "fast gear engaged" confirmed (during calibration)
-outgoing.shifterpos=5 -> storing current position as "slow gear engaged" confirmed (during calibration)
-outgoing.shifterpos>5 -> analog sensor value of gear shifter actuator (6 - 261))
-*/
+  /*
+  Output code summary for the gear shifter:
+  outgoing.shifterpos=0 -> slow gear is engaged
+  outgoing.shifterpos=1 -> fast gear is engaged
+  outgoing.shifterpos=2 -> gear shifter is moving (regular operation and during calibration)
+  outgoing.shifterpos=3 -> gear shifter is not calibrated
+  outgoing.shifterpos=4 -> storing current position as "fast gear engaged" confirmed (during calibration)
+  outgoing.shifterpos=5 -> storing current position as "slow gear engaged" confirmed (during calibration)
+  outgoing.shifterpos>5 -> analog sensor value of gear shifter actuator (6 - 261))
+  */
 
   if (incoming.gear==3){
     mcp.digitalWrite(shiftdir, HIGH);
@@ -750,16 +750,16 @@ outgoing.shifterpos>5 -> analog sensor value of gear shifter actuator (6 - 261))
 
 void diffMotor(){ //the code for the diff lock works equally as the code for the clutch. It only omits code for a 2nd actuator (the shifter uses only one actuator)
 
-/*
-Output code summary for the diff lock:
-outgoing.diffpos=0 -> diff is open
-outgoing.diffpos=1 -> diff is locked
-outgoing.diffpos=2 -> diff lock actuator is moving (regular operation and during calibration)
-outgoing.diffpos=3 -> diff lock is not calibrated
-outgoing.diffpos=4 -> storing current position as "diff is open" confirmed (during calibration)
-outgoing.diffpos=5 -> storing current position as "diff is locked" confirmed (during calibration)
-outgoing.diffpos>5 -> analog sensor value of diff lock actuator (6 - 261))
-*/
+  /*
+  Output code summary for the diff lock:
+  outgoing.diffpos=0 -> diff is open
+  outgoing.diffpos=1 -> diff is locked
+  outgoing.diffpos=2 -> diff lock actuator is moving (regular operation and during calibration)
+  outgoing.diffpos=3 -> diff lock is not calibrated
+  outgoing.diffpos=4 -> storing current position as "diff is open" confirmed (during calibration)
+  outgoing.diffpos=5 -> storing current position as "diff is locked" confirmed (during calibration)
+  outgoing.diffpos>5 -> analog sensor value of diff lock actuator (6 - 261))
+  */
 
   if (incoming.diff==3){
     mcp.digitalWrite(difflock, HIGH);
