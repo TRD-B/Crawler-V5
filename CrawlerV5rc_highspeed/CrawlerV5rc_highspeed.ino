@@ -504,18 +504,18 @@ int readAnalog(int InputChannel){
 }
 
 void clutchCal(){ //function for calibrating the clutch
-/*
-Output code summary for the clutch:
-outgoing.clutch=0 -> close the clutch
-outgoing.clutch=1 -> open the clutch
-outgoing.clutch=2 -> enter clutch calibration
-outgoing.clutch=3 -> move clutch a in dir 1
-outgoing.clutch=4 -> move clutch a in dir 0
-outgoing.clutch=5 -> move clutch b in dir 1
-outgoing.clutch=6 -> move clutch b in dir 0
-outgoing.clutch=7 -> store current position as "clutch is open"
-outgoing.clutch=8 -> store current position as "clutch is closed"
-*/
+  /*
+  Output code summary for the clutch:
+  outgoing.clutch=0 -> close the clutch
+  outgoing.clutch=1 -> open the clutch
+  outgoing.clutch=2 -> enter clutch calibration
+  outgoing.clutch=3 -> move clutch a in dir 1
+  outgoing.clutch=4 -> move clutch a in dir 0
+  outgoing.clutch=5 -> move clutch b in dir 1
+  outgoing.clutch=6 -> move clutch b in dir 0
+  outgoing.clutch=7 -> store current position as "clutch is open"
+  outgoing.clutch=8 -> store current position as "clutch is closed"
+  */
   outgoing.clutch=2;
   if (btn4v==0){
     if (calval==1||calval==2){
@@ -647,9 +647,9 @@ void clutchLCD(){ //LCD screen for clutch calibration
     lcd.print("Adj clsd with UL/LL");
     lcd.setCursor(0,2);
     if (digitalRead(lsw)>0){
-      lcd.print("A; ");
+      lcd.print("A ");
     }else{
-      lcd.print("B; ");
+      lcd.print("B ");
     }
     lcd.print("Clutch cls: ");
     if (incoming.clutchpos>5){
